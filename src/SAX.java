@@ -69,11 +69,14 @@ public class SAX {
                     cadenaResultado = cadenaResultado + "----------------------\n";
                 }
             }
-            
+            //"".
             @Override
             public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException{
-                if(qName.equals("Libro")){
-                    cadenaResultado = String.format("%s Publicado en: %s", cadenaResultado, attributes.getValue(attributes.getQName(0).trim()));
+                if(qName.equals("Libros")){
+                    cadenaResultado = String.format("%s ----------------------\n Se van a mostrar los libros de este documento \n----------------------\n", cadenaResultado);
+                }
+                else if(qName.equals("Libro")){
+                    cadenaResultado = String.format("%s Comienza el libro \n----------------------\n Publicado en: %s", cadenaResultado ,attributes.getValue(attributes.getQName(0).trim()));
                 }
                 else if(qName.equals("Titulo")){
                     cadenaResultado = cadenaResultado + " El titulo es: ".trim();

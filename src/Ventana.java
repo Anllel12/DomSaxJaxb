@@ -16,6 +16,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Ventana extends javax.swing.JFrame {
     
     DOM gesDOM = new DOM();
+    SAX gesSAX = new SAX();
     
     /**
      * Creates new form Ventana
@@ -155,6 +156,11 @@ public class Ventana extends javax.swing.JFrame {
         jMMostrar.add(jMIMostrarDOM);
 
         jMIMostrarSAX.setText("Mostrar SAX");
+        jMIMostrarSAX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIMostrarSAXActionPerformed(evt);
+            }
+        });
         jMMostrar.add(jMIMostrarSAX);
 
         jMenuBar1.add(jMMostrar);
@@ -303,8 +309,26 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jBModificarActionPerformed
 
     private void jMISaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISaxActionPerformed
-        // TODO add your handling code here:
+        File ficheroXML;
+        ficheroXML = seleccionFichero();
+        
+        if(ficheroXML == null){
+            jLabel1.setText("Selecciona un fichero");
+        }
+        else if (gesSAX.abrirXML_SAX(ficheroXML) == -1){
+            jLabel1.setText("Error al crear el objeto SAX");          
+        }
+        else{
+            jLabel1.setText("Objeto SAX creado");   
+        }
     }//GEN-LAST:event_jMISaxActionPerformed
+
+    private void jMIMostrarSAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIMostrarSAXActionPerformed
+        String salida = "";
+        
+        salida = gesSAX.recorrerSAX();
+        jTextArea1.setText(salida);
+    }//GEN-LAST:event_jMIMostrarSAXActionPerformed
     
     private File seleccionFichero() {
         File fichero = null;
