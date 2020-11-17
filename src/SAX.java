@@ -63,14 +63,14 @@ public class SAX {
                 cadenaResultado = cadenaResultado.trim() + "\n";
             }
             
-            @Override
+            @Override // detecta el final de los elementos del xml
             public void endElement(String uri, String localName, String qName) throws  SAXException{
                 if(qName.equals("Libro")){
                     cadenaResultado = cadenaResultado + "----------------------\n";
                 }
             }
-            //"".
-            @Override
+            
+            @Override // detecta el principio de los elementos del xml y al encontrar uno de los elementos puestos en el xml pone en el String cadenaResultado lo que quieres
             public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException{
                 if(qName.equals("Libros")){
                     cadenaResultado = String.format("%s ----------------------\n Se van a mostrar los libros de este documento \n----------------------\n", cadenaResultado);

@@ -312,7 +312,7 @@ public class Ventana extends javax.swing.JFrame {
         File ficheroXML;
         ficheroXML = seleccionFichero();
         
-        if(ficheroXML == null){
+        if(ficheroXML == null){// dependiendo de si elige un fichero o no entra en un if u otro
             jLabel1.setText("Selecciona un fichero");
         }
         else if (gesSAX.abrirXML_SAX(ficheroXML) == -1){
@@ -324,7 +324,7 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jMISaxActionPerformed
 
     private void jMIMostrarSAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIMostrarSAXActionPerformed
-        String salida = "";
+        String salida = "";// en este string guardo lo que me devuelve y lo pongo en el jText
         
         salida = gesSAX.recorrerSAX();
         jTextArea1.setText(salida);
