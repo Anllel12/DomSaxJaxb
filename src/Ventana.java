@@ -62,6 +62,7 @@ public class Ventana extends javax.swing.JFrame {
         jMIJaxb = new javax.swing.JMenuItem();
         jMMostrar = new javax.swing.JMenu();
         jMIMostrarDOM = new javax.swing.JMenuItem();
+        jMIMostrarSAX = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,6 +132,11 @@ public class Ventana extends javax.swing.JFrame {
         jMArchivos.add(jMIDom);
 
         jMISax.setText("Abrir SAX");
+        jMISax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISaxActionPerformed(evt);
+            }
+        });
         jMArchivos.add(jMISax);
 
         jMIJaxb.setText("Abrir JAXB");
@@ -147,6 +153,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jMMostrar.add(jMIMostrarDOM);
+
+        jMIMostrarSAX.setText("Mostrar SAX");
+        jMMostrar.add(jMIMostrarSAX);
 
         jMenuBar1.add(jMMostrar);
 
@@ -292,6 +301,10 @@ public class Ventana extends javax.swing.JFrame {
     private void jBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificarActionPerformed
         gesDOM.modifica(jTAAntiguo.getText(), jTANuevo.getText());
     }//GEN-LAST:event_jBModificarActionPerformed
+
+    private void jMISaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISaxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMISaxActionPerformed
     
     private File seleccionFichero() {
         File fichero = null;
@@ -366,6 +379,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIDom;
     private javax.swing.JMenuItem jMIJaxb;
     private javax.swing.JMenuItem jMIMostrarDOM;
+    private javax.swing.JMenuItem jMIMostrarSAX;
     private javax.swing.JMenuItem jMISax;
     private javax.swing.JMenu jMMostrar;
     private javax.swing.JMenuBar jMenuBar1;
