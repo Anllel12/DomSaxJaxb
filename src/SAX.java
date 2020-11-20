@@ -21,6 +21,8 @@ public class SAX {
     SAXParser parser;
     ManejadorSAX sh;
     File ficheroXML;
+    
+   int libro = 1;
 
         
         public int abrirXML_SAX(File fichero){
@@ -75,8 +77,9 @@ public class SAX {
                 if(qName.equals("Libros")){
                     cadenaResultado = String.format("%s ----------------------\n Se van a mostrar los libros de este documento \n----------------------\n", cadenaResultado);
                 }
-                else if(qName.equals("Libro")){
-                    cadenaResultado = String.format("%s Comienza el libro \n----------------------\n Publicado en: %s", cadenaResultado ,attributes.getValue(attributes.getQName(0).trim()));
+                else if(qName.equals("Libro")){// tengo que conseguir poner el nombre del libro que va a mostrar
+                    cadenaResultado = String.format("%s Comienza el libro %s \n----------------------\n Publicado en: %s", cadenaResultado, libro, attributes.getValue(attributes.getQName(0).trim()));
+                    libro++;
                 }
                 else if(qName.equals("Titulo")){
                     cadenaResultado = cadenaResultado + " El titulo es: ".trim();
