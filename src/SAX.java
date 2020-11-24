@@ -22,7 +22,7 @@ public class SAX {
     ManejadorSAX sh;
     File ficheroXML;
     
-   int libro = 1;
+   int libro = 1;// lleva el contador del libro que aàrece
 
         
         public int abrirXML_SAX(File fichero){
@@ -77,7 +77,7 @@ public class SAX {
                 if(qName.equals("Libros")){
                     cadenaResultado = String.format("%s ----------------------\n Se van a mostrar los libros de este documento \n----------------------\n", cadenaResultado);
                 }
-                else if(qName.equals("Libro")){// tengo que conseguir poner el nombre del libro que va a mostrar
+                else if(qName.equals("Libro")){// pone el numero del libro que va a comenzar
                     cadenaResultado = String.format("%s Comienza el libro %s \n----------------------\n Publicado en: %s", cadenaResultado, libro, attributes.getValue(attributes.getQName(0).trim()));
                     libro++;
                 }

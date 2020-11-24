@@ -17,6 +17,7 @@ public class Ventana extends javax.swing.JFrame {
     
     DOM gesDOM = new DOM();
     SAX gesSAX = new SAX();
+    JAXB gesJAXB = new JAXB();
     
     /**
      * Creates new form Ventana
@@ -64,6 +65,7 @@ public class Ventana extends javax.swing.JFrame {
         jMMostrar = new javax.swing.JMenu();
         jMIMostrarDOM = new javax.swing.JMenuItem();
         jMIMostrarSAX = new javax.swing.JMenuItem();
+        jMIMostrarJAXB = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,6 +143,11 @@ public class Ventana extends javax.swing.JFrame {
         jMArchivos.add(jMISax);
 
         jMIJaxb.setText("Abrir JAXB");
+        jMIJaxb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIJaxbActionPerformed(evt);
+            }
+        });
         jMArchivos.add(jMIJaxb);
 
         jMenuBar1.add(jMArchivos);
@@ -162,6 +169,14 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jMMostrar.add(jMIMostrarSAX);
+
+        jMIMostrarJAXB.setText("Mostrar JAXB");
+        jMIMostrarJAXB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIMostrarJAXBActionPerformed(evt);
+            }
+        });
+        jMMostrar.add(jMIMostrarJAXB);
 
         jMenuBar1.add(jMMostrar);
 
@@ -329,6 +344,28 @@ public class Ventana extends javax.swing.JFrame {
         salida = gesSAX.recorrerSAX();
         jTextArea1.setText(salida);
     }//GEN-LAST:event_jMIMostrarSAXActionPerformed
+
+    private void jMIJaxbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIJaxbActionPerformed
+        File ficheroXML;
+        ficheroXML = seleccionFichero();
+        
+        if(ficheroXML == null){// dependiendo de si elige un fichero o no entra en un if u otro
+            jLabel1.setText("Selecciona un fichero");
+        }
+        else if (gesJAXB.abrirXML_JAXB(ficheroXML) == -1){
+            jLabel1.setText("Error al crear el objeto JAXB");          
+        }
+        else{
+            jLabel1.setText("Objeto JAXB creado");   
+        }
+    }//GEN-LAST:event_jMIJaxbActionPerformed
+
+    private void jMIMostrarJAXBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIMostrarJAXBActionPerformed
+        String salida = "";// en este string guardo lo que me devuelve y lo pongo en el jText
+        
+        salida = gesJAXB.recorrerJAXB();
+        jTextArea1.setText(salida);
+    }//GEN-LAST:event_jMIMostrarJAXBActionPerformed
     
     private File seleccionFichero() {
         File fichero = null;
@@ -403,6 +440,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIDom;
     private javax.swing.JMenuItem jMIJaxb;
     private javax.swing.JMenuItem jMIMostrarDOM;
+    private javax.swing.JMenuItem jMIMostrarJAXB;
     private javax.swing.JMenuItem jMIMostrarSAX;
     private javax.swing.JMenuItem jMISax;
     private javax.swing.JMenu jMMostrar;
