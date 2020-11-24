@@ -40,8 +40,9 @@ public class JAXB {
         for (int i = 0; i < lLibros.size(); i++){
             Libro libroTemp = lLibros.get(i);
             cadenaResultado = String.format("%s \nPublicado en: %s", cadenaResultado, libroTemp.getPublicadoEn());
-            cadenaResultado = String.format("%s \nPublicado en: %s", cadenaResultado, libroTemp.getTitulo());
-            cadenaResultado = String.format("%s \nPublicado en: %s", cadenaResultado, libroTemp.getAutor());
+            cadenaResultado = String.format("%s \nEl titulo es: %s", cadenaResultado, libroTemp.getTitulo());
+            cadenaResultado = String.format("%s \nEl autor es: %s", cadenaResultado, libroTemp.getAutor());
+            cadenaResultado = String.format("%s \nLa editorial es: %s", cadenaResultado, libroTemp.getEditorial());
             cadenaResultado = String.format("%s \n----------------", cadenaResultado);           
         }
         

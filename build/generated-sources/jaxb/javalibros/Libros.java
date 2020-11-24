@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.5-2 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: PM.11.24 a las 05:55:27 PM CET 
+// Generado el: PM.11.24 a las 06:33:15 PM CET 
 //
 
 
@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  *                 &lt;sequence>
  *                   &lt;element name="Titulo" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                   &lt;element name="Autor" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="Editorial" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                 &lt;/sequence>
  *                 &lt;attribute name="publicado_en" type="{http://www.w3.org/2001/XMLSchema}string" />
  *               &lt;/restriction>
@@ -101,6 +102,7 @@ public class Libros {
      *       &lt;sequence>
      *         &lt;element name="Titulo" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *         &lt;element name="Autor" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="Editorial" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *       &lt;/sequence>
      *       &lt;attribute name="publicado_en" type="{http://www.w3.org/2001/XMLSchema}string" />
      *     &lt;/restriction>
@@ -113,7 +115,8 @@ public class Libros {
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
         "titulo",
-        "autor"
+        "autor",
+        "editorial"
     })
     public static class Libro {
 
@@ -121,6 +124,8 @@ public class Libros {
         protected String titulo;
         @XmlElement(name = "Autor", required = true)
         protected String autor;
+        @XmlElement(name = "Editorial", required = true)
+        protected String editorial;
         @XmlAttribute(name = "publicado_en")
         protected String publicadoEn;
 
@@ -170,6 +175,30 @@ public class Libros {
          */
         public void setAutor(String value) {
             this.autor = value;
+        }
+
+        /**
+         * Obtiene el valor de la propiedad editorial.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getEditorial() {
+            return editorial;
+        }
+
+        /**
+         * Define el valor de la propiedad editorial.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setEditorial(String value) {
+            this.editorial = value;
         }
 
         /**
