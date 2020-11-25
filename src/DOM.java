@@ -59,16 +59,10 @@ public class DOM {
             if (node.getNodeType()==Node.ELEMENT_NODE) {
                 
                 datosNodo = procesarLibro(node);
-//                salida = String.format("%s  \n Publicado en: %s", salida, datosNodo[0]);
-//                salida = String.format("%s  \n El titulo es: %s", salida, datosNodo[1]);
-//                salida = String.format("%s  \n El autor es: %s", salida, datosNodo[2]);
-//                salida = String.format("%s  \n ----------------", salida);
-                
-                salida = salida +"\n Publicado en: " + datosNodo[0];
-                salida = salida +"\n Publicado en: " + datosNodo[1];
-                salida = salida +"\n Publicado en: " + datosNodo[2];
-                salida = salida + "\n ---------------";
-                
+                salida = String.format("%s  \n Publicado en: %s", salida, datosNodo[0]);
+                salida = String.format("%s  \n El titulo es: %s", salida, datosNodo[1]);
+                salida = String.format("%s  \n El autor es: %s", salida, datosNodo[2]);
+                salida = String.format("%s  \n ----------------", salida);                
             }
             
         }

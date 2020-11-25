@@ -3,11 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/angel/NetBeansProjects/DomSaxJaxb/xml-resources/jaxb/JavaLibros/librosEsquema.xsd</file>
-            <file>file:/home/angel/NetBeansProjects/DomSaxJaxb/src/Ventana.java</file>
-            <file>file:/home/angel/NetBeansProjects/DomSaxJaxb/src/JAXB.java</file>
-            <file>file:/home/angel/NetBeansProjects/DomSaxJaxb/src/SAX.java</file>
-            <file>file:/home/angel/NetBeansProjects/DomSaxJaxb/build/generated-sources/jaxb/javalibros/Libros.java</file>
+            <file>file:/home/angel/NetBeansProjects/DomSaxJaxb/src/DOM.java</file>
         </group>
     </open-files>
 </project-private>
